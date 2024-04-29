@@ -1,5 +1,12 @@
 <?php
 
+/**
+
+ * Función de conexión del usuario a la BD
+
+ */
+
+
 $conn=mysqli_connect('localhost', 'usuario1', '1234', 'Usuaris');
 
 if (!$conn) {
@@ -7,6 +14,13 @@ if (!$conn) {
     echo "Error en la conexion;:" . mysqli_connect_error();
     exit;
 }
+
+/**
+
+ * Insercion de los datos a la BD
+
+ */
+
 
 $nombre = $_POST['nom'];
 $apellido1 = $_POST['cognom1'];

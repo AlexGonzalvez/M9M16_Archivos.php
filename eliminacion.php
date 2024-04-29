@@ -1,4 +1,11 @@
 <?php
+/**
+
+ * Función de conexión del usuario a la BD
+
+ */
+
+
 
 $conn=mysqli_connect('localhost', 'usuario1', '1234', 'Usuaris');
 
@@ -17,6 +24,14 @@ if (!$conn) {
     <body>
 
         <?php
+
+	/**
+
+	 * Función que elimina los datos de la BD
+
+ 	*/
+
+
 
         $id = $_GET["id"];
         $consulta_eliminacion = "DELETE FROM dades WHERE id = $id";

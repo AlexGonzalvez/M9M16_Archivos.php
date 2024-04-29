@@ -1,4 +1,10 @@
 <?php
+/**
+
+ * Función de conexión del usuario a la BD
+
+ */
+
 
 $conn=mysqli_connect('localhost', 'usuario1', '1234', 'Usuaris');
 
@@ -48,6 +54,14 @@ if (!$conn) {
 <body>
     <h1>Formulario de actualización de datos de un registro</h1>
     <?php
+
+	/**
+
+ 	* Función que actualiza los datos de la BD
+
+	 */
+
+
         $id = $_GET['id'];
 
         $resultado = mysqli_query($conn, "SELECT * FROM dades WHERE id=$id");

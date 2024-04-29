@@ -2,6 +2,13 @@
 
 $conn=mysqli_connect('localhost', 'usuario1', '1234', 'Usuaris');
 
+/**
+
+ * Función de conexión del usuario a la BD
+
+ */
+
+
 if (!$conn) {
 
     echo "Error en la conexion;:" . mysqli_connect_error();
@@ -16,6 +23,14 @@ if (!$conn) {
     </head>
     <body>
         <?php
+
+	    /**
+
+	 * Función de actualizacion de los datos
+
+ 	*/
+
+
             $id = $_GET['id'];
             $consulta_act = "UPDATE dades SET nom = '" . $_POST['nom'] . "',
                                               cognom1 = '" . $_POST['cognom1'] . "',
@@ -41,4 +56,3 @@ if (!$conn) {
     </body>
 </html>
 
-            

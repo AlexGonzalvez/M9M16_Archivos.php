@@ -15,6 +15,8 @@ if (!$conn) {
     echo "Error en la conexion;:" . mysqli_connect_error();
     exit;
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,20 +73,22 @@ if (!$conn) {
         <table border=1>
             <tr><td><b>Nombre</b></td><td><b>Apellido1</b></td><td><b>Apellido2</b></td><td><b>Accion</b></td></tr>
             <?php
-            $resultado = mysqli_query($conn, "SELECT * FROM dades");
+            $resultado = mysqli_query($conn, "SELECT * FROM usuarios");
             while ( $registro = mysqli_fetch_array($resultado) ) {
                 echo "<tr>";
                 echo "<td>" . $registro['nom'] . "</td>";
                 echo "<td>" . $registro['cognom1'] . "</td>";
                 echo "<td>" . $registro['cognom2'] . "</td>";
 
-                $link_actualizacion = "formularioactualizacion.php?id=" . $registro['id'];
+                $link_actualizacion = "formularioactualizacion_admin.php?id=" . $registro['id'];
                 $link_eliminacion = "eliminacion.php?id=" . $registro['id'];
-                $link_añadir="formulario.php";
+                $link_añadir="formulario_admin.php";
+                $link_add_users="añadir_users.php";
                 echo "<td><a href=\"$link_actualizacion\">Actualizar</a> / <a href=\"$link_eliminacion\">Eliminar</a></td>";
                 echo "</tr>";
             }
             echo "<td><a href=\"$link_añadir\">Añadir un nuevo registro</a></td>";
+            echo "<td><a href=\"$link_add_users\">Añadir un nuevo usuario a la Base de Datos</a></td>";
             ?>
         </table>
     </body>

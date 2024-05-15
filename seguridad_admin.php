@@ -27,6 +27,8 @@ margin-top:3%;
 }
 </style>
 
+</html>
+
 
 <?php
 
@@ -69,10 +71,11 @@ $contraseña= $_POST['contraseña'];
 if ($nombre == $nombre_admin and $contraseña == $passwd_admin) {
    echo "<h1>Bienvenido $nombre_admin </p>";
    echo "<p>Pulse en el siguiente enlace para ver el listado de registros.</p>";
-   echo "<a href = listado.php>Listado de registros de usuarios</a>";
+   echo "<a href = listado_admin.php>Listado de registros de usuarios</a>";
 } else {
     echo "<h1><a href=alex_web.php> Volver a la página principal</a><h1>";
-    echo "<h1><a href=inicio_sesion.php>Iniciar sesión</a><h1>";
+    echo "<h1><a href=inicio_sesion_admin.php>Iniciar sesión como admin</a><h1>";
+    echo "<h1><a href=inicio_sesion_user.php>Iniciar sesión como usuario</a><h1>";
     echo "<h1 class=aviso>El usuario NO es un administrador, así que no puede continuar.</h1>";
     echo "<h1 class=consejo>Revise que el nombre de usuario y contraseña sean correctos</h1>";
 }

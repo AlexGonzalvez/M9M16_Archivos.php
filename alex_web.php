@@ -57,7 +57,19 @@
         font-size:120%;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin-top:2%;
-        margin-left:75%;
+        margin-left:50%;
+        margin-right:0%;
+        color:black;
+        position:absolute;
+        bottom:20%;
+
+    }
+
+    .button_user{
+        font-size:120%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top:2%;
+        margin-left:20%;
         margin-right:0%;
         color:black;
         position:absolute;
@@ -72,7 +84,8 @@
     <head>
         <title>Página principal de Álex Gonzalvez</title>
         <meta charset="utf-8">
-        <button> <a href="inicio_sesion.php">INICIAR SESIÓN COMO ADMINISTRADOR</button></a>
+        <button> <a href="inicio_sesion_admin.php">INICIAR SESIÓN COMO ADMINISTRADOR</button></a>
+        <button class="button_user"> <a href="inicio_sesion_user.php">INICIAR SESIÓN COMO USUARIO</button></a>
     </head>
     <body>
         <h1 class="titulo">PÁGINA PRINCIPAL</h1>

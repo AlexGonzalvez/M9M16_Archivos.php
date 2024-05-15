@@ -74,7 +74,7 @@ html{
     <title> Inserción de datos </title>
 </head>
 <body>
-    <p><a class="enlace" href ="listado.php">Volver al listado</a></p>
+    <p><a class="enlace" href ="listado_user.php">Volver al listado</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
     <h1>FORMULARIO DE ACTUALIZACIÓN DE DATOS DE UN REGISTRO</h1>
     <?php
 
@@ -87,7 +87,7 @@ html{
 
         $id = $_GET['id'];
 
-        $resultado = mysqli_query($conn, "SELECT * FROM dades WHERE id=$id");
+        $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE id=$id");
 
         $registro = mysqli_fetch_array($resultado)
 

@@ -1,5 +1,3 @@
-
-
 <DOCTYPE html>
 
 <style>
@@ -50,14 +48,14 @@ table{
     }
 </style>
 <p><a class="enlace" href ="alex_web.php">Volver al menú principal</a></p>
-<h1>INICIO DE SESIÓN DE ADMINISTRADOR</h1>
-    <form method="post" action="seguridad.php">
+<h1>INICIO DE SESIÓN DE USUARIO</h1>
+    <form method="post" action="seguridad_user.php">
     <table border="1">
         <tr>
             <td>Nombre de usuario</td><td><input type="text" name="nom" id="nom" /></td>
         </tr>
         <tr>
-            <td>Contraseña</td><td><input type="text" name="contraseña" id="contraseña" /></td>
+            <td>Contraseña</td><td><input type="password" name="contraseña" id="contraseña" /></td>
         </tr>
     </table>
     <p class="button"><input type="submit" value="Enviar" class="button"/></p>

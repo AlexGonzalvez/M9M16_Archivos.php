@@ -63,7 +63,7 @@
     <title> Inserción de datos </title>
 </head>
 <body>
-    <p><a class="enlace" href ="listado.php">Volver al listado</a></p>
+    <p><a class="enlace" href ="listado_user.php">Volver al listado</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
     <h1>FORMULARIO DE INSERCIÓN DE DATOS</h1>
     <form method="post" action="insercion.php">
     <table border="1">

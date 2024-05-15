@@ -63,7 +63,7 @@ if (!$conn) {
 </style>
     <head>
         <title>Listado de registros con la actualizacion</title>
-        <p><a class="enlace" href ="alex_web.php">Volver a la página principal</a></p>
+        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
 
     </head>
     <body>

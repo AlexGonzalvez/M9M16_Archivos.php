@@ -19,30 +19,52 @@ if (!$conn) {
 
 <html lang="es">
 <style type="text/css" media="screen">
-    html{
-        background: rgba(137, 242, 228, 0.8);
+html{
+        background: rgb(255, 254, 224);
+        background-image: url("img/formulario_actualizar.jpg");
+
     }
 
     h1{
-        font-size:230%;
+        font-size:270%;
         font-family:"Gill Sans Extrabold", Helvetica, sans-serif;
         text-align: center;
+        color: rgb( 252, 255, 209);
+        font-weight:bold;
+        margin-top:3%;
     }
 
     table {
     width: 70%;
     height:700px;
     border: 1.5px solid black;
+    margin-bottom:2%;
     position: relative;
-    top: 70px; left: 15%;
-    background-color:rgb(204, 255, 204);
+    top: 10%; left: 15%;
+    background-color: rgb(  209, 255, 232);
+    margin-top:5%;
     }
 
     .button{
         height:50px;
-        width:120px;
+        width:150px;
+        margin-bottom:2%;
+        font-size:110%;
         position: relative;
-        left: 85%;
+        left: 77%;
+        bottom:25%;
+        
+    }
+
+    td{ 
+        font-size:130%;
+        position:relative;
+    }
+    .enlace { 
+        color: white;
+        font-size:150%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-left:1%;
     }
 
 
@@ -52,7 +74,8 @@ if (!$conn) {
     <title> Inserción de datos </title>
 </head>
 <body>
-    <h1>Formulario de actualización de datos de un registro</h1>
+    <p><a class="enlace" href ="listado.php">Volver al listado</a></p>
+    <h1>FORMULARIO DE ACTUALIZACIÓN DE DATOS DE UN REGISTRO</h1>
     <?php
 
 	/**
@@ -99,6 +122,10 @@ if (!$conn) {
         <tr>
             <td>Fecha de Nacimiento</td><td><input type="text" name="datanaixement" value="<?php echo $registro['datanaixement']; ?>"/></td>
         </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Actualizar" class="button"/></td>
-        </tr>
+    </table>
+        
+    <input type="submit" value="Actualizar" class="button"/></td>
+
+    </form>
+</body>
+</html>

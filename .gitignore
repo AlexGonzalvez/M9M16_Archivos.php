@@ -1,1 +1,5 @@
 /M9M16_Archivos.php/.gitignore
+
+phpDocumentor.phar
+.doc
+

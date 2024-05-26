@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<style type="text/css" media="screen">
+    html{
+        background: rgba(137, 242, 228, 0.8);
+        background-image: url("img/biblioteca.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1{
+        font-size:290%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+        text-align: center;
+        color: rgb(255, 254, 224);
+        margin-top:3%;
+
+
+    }
+
+</style>
+
+</html>
+
+
+
+
+
+
 <?php
 
 /**
@@ -43,7 +73,7 @@ while ( $registro = mysqli_fetch_array($user) ) {
 }
 
 if ($vacio==True){
-    echo "Se han introducido un nombre o contraseña vacías. Vuelva a introducir los datos";
+    echo "<h1>Se han introducido un nombre o contraseña vacías. Vuelva a introducir los datos</h1>";
 
 }
 
@@ -54,9 +84,11 @@ else{
         $insert_query="INSERT INTO users_registrados (nombre, contraseña) VALUES ('$nombre', '$contraseña')";
         $resultado = mysqli_query($conn, $insert_query);
         if (!$resultado) {
-            echo "Insercion de datos realizada INCORRECTAMENTE";
+            echo "<h1>Insercion de datos realizada INCORRECTAMENTE</h1>";
+            echo "<h1><a href =listado_user.php>Volver al listado</a></h1>";
         } else {
-            echo "Insercion de datos realizada CORRECTAMENTE";
+            echo "<h1>Insercion de datos realizada CORRECTAMENTE</h1>";
+            echo "<h1><a href =listado_user.php>Volver al listado</a></h1>";
         }
 
     }    

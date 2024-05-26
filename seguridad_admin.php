@@ -70,8 +70,9 @@ $contraseña= $_POST['contraseña'];
 
 if ($nombre == $nombre_admin and $contraseña == $passwd_admin) {
    echo "<h1>Bienvenido $nombre_admin </p>";
-   echo "<p>Pulse en el siguiente enlace para ver el listado de registros.</p>";
+   echo "<p>Pulse en uno de los siguientes enlaces para ver el listado de registros o el listado de libros y sus autores</p>";
    echo "<a href = listado_admin.php>Listado de registros de usuarios</a>";
+   echo "<p><a href = libros_autores.php>Listado de libros y sus autores</a></p>";
 } else {
     echo "<h1><a href=alex_web.php> Volver a la página principal</a><h1>";
     echo "<h1><a href=inicio_sesion_admin.php>Iniciar sesión como admin</a><h1>";

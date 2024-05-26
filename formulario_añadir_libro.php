@@ -31,7 +31,7 @@
     .button{
         height:50px;
         width:200px;
-        margin-bottom:2%;
+        margin-bottom:-7%;
         font-size:120%;
         position: absolute;
         left: 70%;
@@ -63,19 +63,25 @@
     <title> Inserción de usuarios en la BD </title>
 </head>
 <body>
-    <p><a class="enlace" href ="listado_admin.php">Volver al listado</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
-    <h1>FORMULARIO DE INSERCIÓN DE USUARIOS EN LA BASE DE DATOS</h1>
-    <form method="post" action="insercion_users.php">
+    <p><a class="enlace" href ="listado_libros.php">Volver al listado de libros</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
+    <h1>FORMULARIO DE INSERCIÓN DE LIBROS EN LA BASE DE DATOS </h1>
+    <form method="post" action="insercion_libros.php">
     <table border="1">
         <tr>
-            <td>Nombre</td><td><input type="text" name="nombre" /></td>
+            <td>ISBN</td><td><input type="text" name="isbn" /></td>
         </tr>
         <tr>
-            <td>Contraseña</td><td><input type="text" name="contraseña" /></td>
+            <td>Título</td><td><input type="text" name="titulo" /></td>
         </tr>
+        <tr>
+            <td>Descripción</td><td><input type="text" name="descripcion" /></td>
+        </tr>
+        <tr>
+            <td>Autor ID</td><td><input type="text" name="autor_ID" /></td>
+        </tr>
+
 
     <input type="submit" value="Confirmar y guardar" class="button"/>
 </form>
 </body>
 </html>
-

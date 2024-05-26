@@ -24,7 +24,6 @@
 </html>
 
 
-
 <?php
 
 $conn=mysqli_connect('localhost', 'usuario1', '1234', 'Usuaris');
@@ -59,27 +58,21 @@ if (!$conn) {
 
 
             $id = $_GET['id'];
-            $consulta_act = "UPDATE dades SET nom = '" . $_POST['nom'] . "',
-                                              cognom1 = '" . $_POST['cognom1'] . "',
-                                              cognom2 = '" . $_POST['cognom2'] . "',
-                                              adreca = '" . $_POST['adreca'] . "',
-                                              cp = '" . $_POST['cp'] . "',
-                                              ciutat = '" . $_POST['ciutat'] . "',
-                                              pais = '" . $_POST['pais'] . "',
-                                              telefon = '" . $_POST['telefon'] . "',
-                                              datanaixement = '" . $_POST['datanaixement'] . "'
-                                              WHERE id=$id";
+            $consulta_act = "UPDATE autores SET
+                                              nombre = '" . $_POST['nombre'] . "',
+                                              apellido1 = '" . $_POST['apellido1'] . "',
+                                              apellido2 = '" . $_POST['apellido2'] . "'
+                                              WHERE autor_ID=$id";
             if (!mysqli_query($conn, $consulta_act)) {
                 ?>
                 <h1>Error en la actualizacion!</h1>
                 <?php
             } else {
                 ?>
-                <h1>Actualización realizada! <a href ="listado_user.php">Volver al listado</a></h1>
+                <h1>Actualización realizada! <a href ="listado_autores.php">Volver al listado de autores</a></h1>
                 <?php
 
             }
         ?>
     </body>
 </html>
-

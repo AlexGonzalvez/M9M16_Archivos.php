@@ -87,7 +87,7 @@ html{
 
         $id = $_GET['id'];
 
-        $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE id=$id");
+        $resultado = mysqli_query($conn, "SELECT * FROM dades WHERE id=$id");
 
         $registro = mysqli_fetch_array($resultado)
 

@@ -59,27 +59,21 @@ if (!$conn) {
 
 
             $id = $_GET['id'];
-            $consulta_act = "UPDATE dades SET nom = '" . $_POST['nom'] . "',
-                                              cognom1 = '" . $_POST['cognom1'] . "',
-                                              cognom2 = '" . $_POST['cognom2'] . "',
-                                              adreca = '" . $_POST['adreca'] . "',
-                                              cp = '" . $_POST['cp'] . "',
-                                              ciutat = '" . $_POST['ciutat'] . "',
-                                              pais = '" . $_POST['pais'] . "',
-                                              telefon = '" . $_POST['telefon'] . "',
-                                              datanaixement = '" . $_POST['datanaixement'] . "'
-                                              WHERE id=$id";
+            $consulta_act = "UPDATE libros SET libro_isbn = '" . $_POST['libro_isbn'] . "',
+                                              titulo = '" . $_POST['titulo'] . "',
+                                              descripcion = '" . $_POST['descripcion'] . "',
+                                              autor_ID = '" . $_POST['autor_ID'] . "'
+                                              WHERE libro_id=$id";
             if (!mysqli_query($conn, $consulta_act)) {
                 ?>
                 <h1>Error en la actualizacion!</h1>
                 <?php
             } else {
                 ?>
-                <h1>Actualización realizada! <a href ="listado_user.php">Volver al listado</a></h1>
+                <h1>Actualización realizada! <a href ="listado_libros.php">Volver al listado de libros</a></h1>
                 <?php
 
             }
         ?>
     </body>
 </html>
-

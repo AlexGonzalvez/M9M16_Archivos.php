@@ -65,7 +65,7 @@ if (!$conn) {
 </style>
     <head>
         <title>Listado de registros con la actualizacion</title>
-        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
+        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a><a class="enlace" href ="libros_autores.php">Acceder al listado de libros y autores</a></p>
 
     </head>
     <body>
@@ -73,7 +73,7 @@ if (!$conn) {
         <table border=1>
             <tr><td><b>Nombre</b></td><td><b>Apellido1</b></td><td><b>Apellido2</b></td><td><b>Accion</b></td></tr>
             <?php
-            $resultado = mysqli_query($conn, "SELECT * FROM usuarios");
+            $resultado = mysqli_query($conn, "SELECT * FROM dades");
             while ( $registro = mysqli_fetch_array($resultado) ) {
                 echo "<tr>";
                 echo "<td>" . $registro['nom'] . "</td>";
@@ -81,7 +81,7 @@ if (!$conn) {
                 echo "<td>" . $registro['cognom2'] . "</td>";
 
                 $link_actualizacion = "formularioactualizacion_admin.php?id=" . $registro['id'];
-                $link_eliminacion = "eliminacion.php?id=" . $registro['id'];
+                $link_eliminacion = "eliminacion_admin.php?id=" . $registro['id'];
                 $link_añadir="formulario_admin.php";
                 $link_add_users="añadir_users.php";
                 echo "<td><a href=\"$link_actualizacion\">Actualizar</a> / <a href=\"$link_eliminacion\">Eliminar</a></td>";

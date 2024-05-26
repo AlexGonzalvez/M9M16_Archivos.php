@@ -24,9 +24,6 @@
 </html>
 
 
-
-
-
 <?php
 
 /**
@@ -51,17 +48,12 @@ if (!$conn) {
  */
 
 
-$nombre = $_POST['nom'];
-$apellido1 = $_POST['cognom1'];
-$apellido2 = $_POST['cognom2'];
-$adreca = $_POST['adreca'];
-$cp = $_POST['cp'];
-$ciutat = $_POST['ciutat'];
-$pais = $_POST['pais'];
-$telefon = $_POST['telefon'];
-$data = $_POST['datanaixement'];
+$nombre= $_POST['nombre'];
+$apellido1 = $_POST['apellido1'];
+$apellido2 = $_POST['apellido2'];
 
-$insercion_sql = "INSERT INTO dades VALUES (NULL, '$nombre', '$apellido1', '$apellido2', '$adreca', '$cp', '$ciutat', '$pais', '$telefon', '$data')";
+
+$insercion_sql = "INSERT INTO autores (nombre, apellido1, apellido2) VALUES ('$nombre', '$apellido1', '$apellido2')";
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +66,10 @@ $insercion_sql = "INSERT INTO dades VALUES (NULL, '$nombre', '$apellido1', '$ape
             $resultado = mysqli_query($conn, $insercion_sql);
             if (!$resultado) {
                 echo "<h1>Insercion de datos realizada INCORRECTAMENTE</h1>";
+                echo "<h1><a href =listado_user.php>Volver al listado</a></h1>";
             } else {
                 echo "<h1>Insercion de datos realizada CORRECTAMENTE</h1>";
-                echo "<h1><a href=alex_web.php>Volver al menú principal</a></h1>";
+                echo "<h1><a href =listado_user.php>Volver al listado</a></h1>";
             }
         ?>
     </body>

@@ -63,19 +63,22 @@
     <title> Inserción de usuarios en la BD </title>
 </head>
 <body>
-    <p><a class="enlace" href ="listado_admin.php">Volver al listado</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
-    <h1>FORMULARIO DE INSERCIÓN DE USUARIOS EN LA BASE DE DATOS</h1>
-    <form method="post" action="insercion_users.php">
+    <p><a class="enlace" href ="listado_autores.php">Volver al listado de autores</a><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
+    <h1>FORMULARIO DE INSERCIÓN DE AUTORES EN LA BASE DE DATOS </h1>
+    <form method="post" action="insercion_autor.php">
     <table border="1">
         <tr>
             <td>Nombre</td><td><input type="text" name="nombre" /></td>
         </tr>
         <tr>
-            <td>Contraseña</td><td><input type="text" name="contraseña" /></td>
+            <td>Apellido1</td><td><input type="text" name="apellido1" /></td>
         </tr>
+        <tr>
+            <td>Apellido2</td><td><input type="text" name="apellido2" /></td>
+        </tr>
+
 
     <input type="submit" value="Confirmar y guardar" class="button"/>
 </form>
 </body>
 </html>
-

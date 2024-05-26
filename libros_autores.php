@@ -65,28 +65,29 @@ if (!$conn) {
 </style>
     <head>
         <title>Listado de registros con la actualizacion</title>
-        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
+        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a><a class="enlace" href ="listado_admin.php">Listado de registros con sus usuarios</a></p>
+       
 
     </head>
     <body>
-        <h1>LISTADO ACTUALIZADO DE REGISTROS DE USUARIOS DE LA BIBLIOTECA</h1>
+        <h1>LISTADO DE LIBROS CON SUS AUTORES</h1>
         <table border=1>
-            <tr><td><b>Nombre</b></td><td><b>Apellido1</b></td><td><b>Apellido2</b></td><td><b>Accion</b></td></tr>
+            <tr><td><b>Libro_ID</b></td><td><b>Titulo</b></td><td><b>Autor_ID</b></td><td><b>Nombre_autor</b></td></tr>
             <?php
-            $resultado = mysqli_query($conn, "SELECT * FROM dades");
+            $resultado = mysqli_query($conn, "SELECT libros.libro_id, libros.titulo, autores.autor_ID, autores.nombre FROM libros INNER JOIN autores ON libros.autor_ID = autores.autor_ID");
             while ( $registro = mysqli_fetch_array($resultado) ) {
                 echo "<tr>";
-                echo "<td>" . $registro['nom'] . "</td>";
-                echo "<td>" . $registro['cognom1'] . "</td>";
-                echo "<td>" . $registro['cognom2'] . "</td>";
+                echo "<td>" . $registro['libro_id'] . "</td>";
+                echo "<td>" . $registro['titulo'] . "</td>";
+                echo "<td>" . $registro['autor_ID'] . "</td>";
+                echo "<td>" . $registro['nombre'] . "</td>";
 
-                $link_actualizacion = "formularioactualizacion_user.php?id=" . $registro['id'];
-                $link_eliminacion = "eliminacion_user.php?id=" . $registro['id'];
-                $link_añadir="formulario_user.php";
-                echo "<td><a href=\"$link_actualizacion\">Actualizar</a> / <a href=\"$link_eliminacion\">Eliminar</a></td>";
+                $link_libros="listado_libros.php";
+                $link_autores="listado_autores.php";
                 echo "</tr>";
             }
-            echo "<td><a href=\"$link_añadir\">Añadir un nuevo registro</a></td>";
+            echo "<td><a href=\"$link_libros\">Ver datos completos de los libros</a></td>";
+            echo "<td><a href=\"$link_autores\">Ver datos completos de los autores</a></td>";
             ?>
         </table>
     </body>

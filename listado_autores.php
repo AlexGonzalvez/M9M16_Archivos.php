@@ -43,8 +43,10 @@ if (!$conn) {
     width: 50%;
     height:350px;
     border: 1.5px solid black;
-    position: relative;
-    top: 160px; left: 25%;
+    margin-bottom:-5%;
+    margin-top:5%;
+    margin-left:25%;
+
     background-color: rgb(254, 251, 235)
     }
 
@@ -65,30 +67,35 @@ if (!$conn) {
 </style>
     <head>
         <title>Listado de registros con la actualizacion</title>
-        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a></p>
+        <p><a class="enlace" href ="alex_web.php">Cerrar sesión</a><a class="enlace" href ="libros_autores.php">Volver al listado de libros y autores</a><a class="enlace" href ="listado_admin.php">Listado de registros con sus usuarios</a></p></p>
 
     </head>
     <body>
-        <h1>LISTADO ACTUALIZADO DE REGISTROS DE USUARIOS DE LA BIBLIOTECA</h1>
+        <h1>LISTADO COMPLETO DE AUTORES</h1>
         <table border=1>
-            <tr><td><b>Nombre</b></td><td><b>Apellido1</b></td><td><b>Apellido2</b></td><td><b>Accion</b></td></tr>
+            <tr><td><b>Autor_ID</b></td><td><b>Nombre</b></td><td><b>Apellido1</b></td><td><b>Apellido2</b></td><td><b>Accion</b></td></tr>
             <?php
-            $resultado = mysqli_query($conn, "SELECT * FROM dades");
+            $resultado = mysqli_query($conn, "SELECT * FROM autores");
             while ( $registro = mysqli_fetch_array($resultado) ) {
                 echo "<tr>";
-                echo "<td>" . $registro['nom'] . "</td>";
-                echo "<td>" . $registro['cognom1'] . "</td>";
-                echo "<td>" . $registro['cognom2'] . "</td>";
+                echo "<td>" . $registro['autor_ID'] . "</td>";
+                echo "<td>" . $registro['nombre'] . "</td>";
+                echo "<td>" . $registro['apellido1'] . "</td>";
+                echo "<td>" . $registro['apellido2'] . "</td>";
 
-                $link_actualizacion = "formularioactualizacion_user.php?id=" . $registro['id'];
-                $link_eliminacion = "eliminacion_user.php?id=" . $registro['id'];
-                $link_añadir="formulario_user.php";
+
+                $link_actualizacion = "formulario_actualizar_autor.php?id=" . $registro['autor_ID'];
+                $link_eliminacion = "eliminar_autor.php?id=" . $registro['autor_ID'];
+                $link_añadir="formulario_autor.php";
+                $link_libros="listado_libros.php";
                 echo "<td><a href=\"$link_actualizacion\">Actualizar</a> / <a href=\"$link_eliminacion\">Eliminar</a></td>";
                 echo "</tr>";
             }
             echo "<td><a href=\"$link_añadir\">Añadir un nuevo registro</a></td>";
+            echo "<td><a href=\"$link_libros\">Ver datos completos de los libros</a></td>";
             ?>
         </table>
+        <p></p>
     </body>
 
 </html>
